@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo3</title>
+
+    <script language="JavaScript">
+        var reloj = 0;
+        var frecuencia = 1000;
+        function actualiza() {
+            var son = new Date();
+            var fecha = son.getDate() + " - " + (son.getMonth() + 1) + " - " + son.getFullYear();
+            var hora = son.getHours() + ":" + son.getMinutes() + ":" + son.getUTCSeconds();
+            var escribe = 'Hoy es ' + fecha + ' y son las ' + hora + ' horas';
+            var situa = document.getElementById('capa0');
+            situa.innerHTML = escribe;
+            reloj = setTimeout("actualiza()", frecuencia);
+        }
+    </script>
+</head>
+
+<body onload="actualiza()" ;>
+    <div id="capa0">
+
+    </div>
+</body>
+
+</html>
